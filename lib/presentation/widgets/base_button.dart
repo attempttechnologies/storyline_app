@@ -3,42 +3,52 @@ import 'package:storyline_app/presentation/configs/responsive_size.dart';
 
 /// Buttons will inherit default stylings from base button
 class BaseButton extends StatelessWidget {
-  const BaseButton({required this.onPressed, this.child, this.color});
+  const BaseButton({
+    required this.onPressed,
+    this.child,
+    this.color,
+    this.width: 90.0,
+    this.height: 8.0,
+  });
 
   final void Function() onPressed;
   final Widget? child;
   final Color? color;
+  final double width;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-        left: _containerMargin(context),
-        right: _containerMargin(context),
-      ),
-      width: double.infinity,
-      child: _elevatedButton(),
-    );
+    return _elevatedButton(context);
   }
 
-  double _containerMargin(BuildContext context) {
-    return RepsonsiveSize.width(
-      context: context,
-      percentageWidth: 5.0,
-    );
-  }
-
-  ElevatedButton _elevatedButton() {
+  ElevatedButton _elevatedButton(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       child: child,
-      style: _buttonStyle(),
+      style: _buttonStyle(context),
     );
   }
 
-  ButtonStyle _buttonStyle() {
+  ButtonStyle _buttonStyle(BuildContext context) {
     return ButtonStyle(
       backgroundColor: MaterialStateProperty.all<Color?>(color),
+      minimumSize: MaterialStateProperty.all<Size?>(
+        _buttonSize(context),
+      ),
+    );
+  }
+
+  Size _buttonSize(BuildContext context) {
+    return Size(
+      RepsonsiveSize.width(
+        context: context,
+        percentageWidth: width,
+      ),
+      RepsonsiveSize.height(
+        context: context,
+        percentageHeight: height,
+      ),
     );
   }
 }

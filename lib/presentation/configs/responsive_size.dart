@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Create responsive size for widgets by using percentages instead fixed pixels
+/// Create responsive size for widgets by using percentages instead fixed pixels
 class RepsonsiveSize {
   RepsonsiveSize._();
 
