@@ -7,8 +7,8 @@ class BaseButton extends StatelessWidget {
     required this.onPressed,
     this.child,
     this.color,
-    this.width: 90.0,
-    this.height: 8.0,
+    this.width: 60.0,
+    this.height: 7.0,
   });
 
   final void Function() onPressed;
@@ -33,9 +33,20 @@ class BaseButton extends StatelessWidget {
   ButtonStyle _buttonStyle(BuildContext context) {
     return ButtonStyle(
       backgroundColor: MaterialStateProperty.all<Color?>(color),
-      minimumSize: MaterialStateProperty.all<Size?>(
-        _buttonSize(context),
-      ),
+      minimumSize: MaterialStateProperty.all<Size?>(_buttonSize(context)),
+      shape: MaterialStateProperty.all<OutlinedBorder?>(_buttonShape(context)),
+    );
+  }
+
+  RoundedRectangleBorder _buttonShape(BuildContext context) {
+    return RoundedRectangleBorder(
+      borderRadius: _borderRadiusButton(context),
+    );
+  }
+
+  BorderRadius _borderRadiusButton(BuildContext context) {
+    return BorderRadius.circular(
+      RepsonsiveSize.width(context: context, percentageWidth: 10.0),
     );
   }
 
