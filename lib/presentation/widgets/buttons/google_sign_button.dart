@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:storyline_app/presentation/configs/responsive_size.dart';
 import 'package:storyline_app/presentation/widgets/buttons/base_button.dart';
 
 class GoogleSignInButton extends BaseButton {
