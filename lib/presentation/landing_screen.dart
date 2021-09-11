@@ -20,6 +20,10 @@ class LandingScreen extends StatelessWidget {
           onPressed: _onPressed,
           text: "Sign in with Google",
           imagePath: "assets/images/icons8-google-48.png",
+          imgWidth: RepsonsiveSize.width(
+            context: context,
+            percentageWidth: 6.0,
+          ),
         ),
       ],
     );
@@ -27,11 +31,11 @@ class LandingScreen extends StatelessWidget {
 
   SizedBox _sizedBox(BuildContext context) {
     return SizedBox(
-        height: RepsonsiveSize.height(
-          context: context,
-          percentageHeight: 2.0,
-        ),
-      );
+      height: RepsonsiveSize.height(
+        context: context,
+        percentageHeight: 2.0,
+      ),
+    );
   }
 
   _onPressed() {
