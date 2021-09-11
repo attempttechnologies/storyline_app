@@ -18,6 +18,7 @@ class LandingScreen extends StatelessWidget {
         _sizedBox(context),
         GoogleSignInButton(
           onPressed: _onPressed,
+          text: "Sign in with Google",
           imagePath: "assets/images/icons8-google-48.png",
         ),
       ],
