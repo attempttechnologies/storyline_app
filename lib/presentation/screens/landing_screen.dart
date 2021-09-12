@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:storyline_app/presentation/configs/responsive_size.dart';
-import 'package:storyline_app/presentation/screens/email_login_screen.dart';
+import 'package:storyline_app/presentation/screens/email_sign_in_screen.dart';
 import 'package:storyline_app/presentation/widgets/buttons/email_signin_button.dart';
 import 'package:storyline_app/presentation/widgets/buttons/google_sign_button.dart';
 
@@ -18,7 +18,7 @@ class LandingScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => EmailLoginScreen(),
+                  builder: (BuildContext context) => EmailSignInScreen(),
                 ),
               );
             },
