@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyline_app/presentation/widgets/forms/sign_in_form.dart';
 
 class EmailLoginScreen extends StatelessWidget {
   const EmailLoginScreen({ Key? key }) : super(key: key);
@@ -7,7 +8,8 @@ class EmailLoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Text("Email Login"),
+        margin: EdgeInsets.all(20.0),
+        child: SignInForm(),
       ),
     );
   }
