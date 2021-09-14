@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storyline_app/presentation/widgets/forms/sign_in_form.dart';
+import 'package:storyline_app/presentation/widgets/forms/auth/sign_in_form.dart';
 
 class EmailSignInScreen extends StatelessWidget {
   const EmailSignInScreen({ Key? key }) : super(key: key);

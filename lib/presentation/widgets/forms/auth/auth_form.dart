@@ -4,33 +4,38 @@ import 'package:storyline_app/presentation/widgets/buttons/email_signin_button.d
 import 'package:storyline_app/presentation/widgets/forms/custom_text_form_field.dart';
 import 'package:storyline_app/presentation/widgets/text/main_title.dart';
 
-class SignInForm extends StatelessWidget {
-  const SignInForm({Key? key}) : super(key: key);
+class AuthForm extends StatelessWidget {
+  const AuthForm({
+    required this.title,
+    required this.emailTextFormField,
+    required this.passwordTextFormField,
+    required this.signInButton,
+    required this.toggleTo,
+  });
+
+  final MainTitle title;
+  final CustomTextFormField emailTextFormField;
+  final CustomTextFormField passwordTextFormField;
+  final EmailSignInButton signInButton;
+  final GestureDetector toggleTo;
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      child: Container(
-        margin: _formMargin(context),
+    return Container(
+      margin: _formMargin(context),
+      child: Form(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            MainTitle(title: "Sign In"),
+            title,
             _sizedBox(context, percentageHeight: 5.0),
-            CustomTextFormField(
-              labelText: "Email",
-              hintText: "example@email.com",
-            ),
+            emailTextFormField,
             _sizedBox(context, percentageHeight: 2.0),
-            CustomTextFormField(
-              labelText: "Password",
-              hintText: "At least 6 characters long",
-            ),
+            passwordTextFormField,
             _sizedBox(context, percentageHeight: 2.0),
-            EmailSignInButton(
-              onPressed: () {},
-              text: "Sign In",
-            ),
+            signInButton,
+            _sizedBox(context, percentageHeight: 2.0),
+            toggleTo,
           ],
         ),
       ),
