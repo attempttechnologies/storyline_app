@@ -10,17 +10,39 @@ class SignUpForm extends StatelessWidget {
     return AuthForm(
       title: MainTitle(title: "Sign In"),
       emailTextFormField: CustomTextFormField(
-              labelText: "Email",
-              hintText: "example@email.com",
-            ),
+        labelText: "Email",
+        hintText: "example@email.com",
+      ),
       passwordTextFormField: CustomTextFormField(
-              labelText: "Password",
-            ),
+        labelText: "Password",
+      ),
       signInButton: EmailSignInButton(
-              onPressed: () {},
-              text: "Sign Up",
-            ),
-      toggleTo: GestureDetector(),
+        onPressed: () {},
+        text: "Sign Up",
+      ),
+      toggleTo: GestureDetector(
+        child: _toSignInText(),
+        onTap: () {
+          _toSignIn(context);
+        },
+      ),
+    );
+  }
+
+  dynamic _toSignIn(BuildContext context) {
+    return Navigator.pop(context);
+  }
+
+  Text _toSignInText() {
+    return Text(
+      "Already have an account?",
+      style: _toSignUpTextStyle(),
+    );
+  }
+
+  TextStyle _toSignUpTextStyle() {
+    return TextStyle(
+      decoration: TextDecoration.underline,
     );
   }
 }
