@@ -10,31 +10,35 @@ class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          EmailSignInButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => EmailSignInScreen(),
-                ),
-              );
-            },
-            text: "Sign in with email",
-          ),
-          _sizedBox(context),
-          GoogleSignInButton(
-            onPressed: () {},
-            text: "Sign in with Google",
-            imagePath: "assets/images/icons8-google-48.png",
-            imgWidth: RepsonsiveSize.width(
-              context: context,
-              percentageWidth: 6.0,
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            EmailSignInButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => EmailSignInScreen(),
+                  ),
+                );
+              },
+              text: "Sign in with email",
             ),
-          ),
-        ],
+            _sizedBox(context),
+            GoogleSignInButton(
+              onPressed: () {},
+              text: "Sign in with Google",
+              imagePath: "assets/images/icons8-google-48.png",
+              imgWidth: RepsonsiveSize.width(
+                context: context,
+                percentageWidth: 6.0,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
