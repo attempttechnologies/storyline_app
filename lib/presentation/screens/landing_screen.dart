@@ -3,6 +3,8 @@ import 'package:storyline_app/presentation/configs/responsive_size.dart';
 import 'package:storyline_app/presentation/screens/email_sign_in_screen.dart';
 import 'package:storyline_app/presentation/widgets/buttons/email_signin_button.dart';
 import 'package:storyline_app/presentation/widgets/buttons/google_sign_button.dart';
+import 'package:storyline_app/presentation/widgets/text/main_title.dart';
+import 'package:storyline_app/presentation/widgets/text/sub_title.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen();
@@ -16,6 +18,10 @@ class LandingScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            MainTitle(title: "Story Line"),
+            _sizedBox(context, percentageHeight: 2.0),
+            SubTitle(subTitle: "Read Short Stories From Great Authors"),
+             _sizedBox(context, percentageHeight: 5.0),
             EmailSignInButton(
               onPressed: () {
                 Navigator.push(
@@ -27,7 +33,7 @@ class LandingScreen extends StatelessWidget {
               },
               text: "Sign in with email",
             ),
-            _sizedBox(context),
+            _sizedBox(context, percentageHeight: 2.0),
             GoogleSignInButton(
               onPressed: () {},
               text: "Sign in with Google",
@@ -43,11 +49,11 @@ class LandingScreen extends StatelessWidget {
     );
   }
 
-  SizedBox _sizedBox(BuildContext context) {
+  SizedBox _sizedBox(BuildContext context, {required double percentageHeight}) {
     return SizedBox(
       height: RepsonsiveSize.height(
         context: context,
-        percentageHeight: 2.0,
+        percentageHeight: percentageHeight,
       ),
     );
   }
