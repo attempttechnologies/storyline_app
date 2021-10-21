@@ -19,6 +19,7 @@ class SignInForm extends StatelessWidget {
               hintText: "At least 6 characters long",
             ),
       signInButton: EmailSignInButton(
+        
               onPressed: () {},
               text: "Sign In",
             ),

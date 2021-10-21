@@ -5,8 +5,10 @@ class EmailSignInButton extends BaseButton {
   EmailSignInButton({
     required void Function() onPressed,
     required String text,
+    Color color: Colors.greenAccent,
   }) : super(
           onPressed: onPressed,
           child: Text(text),
+          color: color,
         );
 }

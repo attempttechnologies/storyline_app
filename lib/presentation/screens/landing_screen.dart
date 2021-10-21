@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:storyline_app/presentation/configs/responsive_size.dart';
 import 'package:storyline_app/presentation/screens/email_sign_in_screen.dart';
+import 'package:storyline_app/presentation/screens/home/home_screen.dart';
 import 'package:storyline_app/presentation/widgets/buttons/email_signin_button.dart';
 import 'package:storyline_app/presentation/widgets/buttons/google_sign_button.dart';
 import 'package:storyline_app/presentation/widgets/text/main_title.dart';
@@ -21,7 +22,7 @@ class LandingScreen extends StatelessWidget {
             MainTitle(title: "Story Line"),
             _sizedBox(context, percentageHeight: 2.0),
             SubTitle(subTitle: "Read Short Stories From Great Authors"),
-             _sizedBox(context, percentageHeight: 5.0),
+            _sizedBox(context, percentageHeight: 5.0),
             EmailSignInButton(
               onPressed: () {
                 Navigator.push(
@@ -35,7 +36,14 @@ class LandingScreen extends StatelessWidget {
             ),
             _sizedBox(context, percentageHeight: 2.0),
             GoogleSignInButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => HomeScreen(),
+                  ),
+                );
+              },
               text: "Sign in with Google",
               imagePath: "assets/images/icons8-google-48.png",
               imgWidth: RepsonsiveSize.width(
