@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:storyline_app/presentation/configs/responsive_size.dart';
 
 class MainTitle extends StatelessWidget {
@@ -18,5 +19,6 @@ class MainTitle extends StatelessWidget {
           context: context,
           percentageWidth: 10.0,
         ),
+        fontFamily: GoogleFonts.dancingScript().fontFamily,
       );
 }
