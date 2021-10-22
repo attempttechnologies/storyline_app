@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:storyline_app/presentation/configs/responsive_size.dart';
 
 class SubTitle extends StatelessWidget {
-  const SubTitle({required this.subTitle});
+  const SubTitle({required this.subTitle, this.fontSize: 3.0});
   final String subTitle;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class SubTitle extends StatelessWidget {
   TextStyle _textStyle(BuildContext context) => TextStyle(
         fontSize: RepsonsiveSize.width(
           context: context,
-          percentageWidth: 3.0,
+          percentageWidth: fontSize,
         ),
       );
 }

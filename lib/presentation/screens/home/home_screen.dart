@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:storyline_app/presentation/configs/responsive_size.dart';
+import 'package:storyline_app/presentation/screens/story/story.dart';
 import 'package:storyline_app/presentation/screens/home/widgets/story_card.dart';
 import 'package:storyline_app/presentation/widgets/text/main_title.dart';
 
@@ -13,12 +14,25 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           _topMargin(context),
-          StoryCard(),
+          StoryCard(
+            onTap: () => _navTo(context),
+          ),
           StoryCard(),
           StoryCard(),
           StoryCard(),
           StoryCard(),
         ],
+      ),
+    );
+  }
+
+  Future<dynamic> _navTo(BuildContext context) async {
+    return await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return Story();
+        },
       ),
     );
   }
