@@ -12,23 +12,9 @@ class Story extends StatelessWidget {
     return Scaffold(
       body: Card(
         shape: _cardShape(context),
-        margin: EdgeInsets.all(
-          RepsonsiveSize.width(
-            context: context,
-            percentageWidth: 4.0,
-          ),
-        ),
+        margin: _cardMargin(context),
         child: Container(
-          margin: EdgeInsets.only(
-            left: RepsonsiveSize.width(
-              context: context,
-              percentageWidth: 4.0,
-            ),
-            right: RepsonsiveSize.width(
-              context: context,
-              percentageWidth: 4.0,
-            ),
-          ),
+          margin: _containerMargin(context),
           child: ListView(
             children: [
               _sizedBox(context),
@@ -55,6 +41,28 @@ class Story extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  EdgeInsets _cardMargin(BuildContext context) {
+    return EdgeInsets.all(
+      RepsonsiveSize.width(
+        context: context,
+        percentageWidth: 4.0,
+      ),
+    );
+  }
+
+  EdgeInsets _containerMargin(BuildContext context) {
+    return EdgeInsets.only(
+      left: RepsonsiveSize.width(
+        context: context,
+        percentageWidth: 4.0,
+      ),
+      right: RepsonsiveSize.width(
+        context: context,
+        percentageWidth: 4.0,
       ),
     );
   }
