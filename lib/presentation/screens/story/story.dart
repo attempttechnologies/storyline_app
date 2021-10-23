@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:storyline_app/presentation/configs/responsive_size.dart';
 import 'package:storyline_app/presentation/widgets/text/main_title.dart';
+import 'package:storyline_app/presentation/widgets/text/story_rating.dart';
 import 'package:storyline_app/presentation/widgets/text/sub_title.dart';
 
 class Story extends StatelessWidget {
@@ -9,26 +10,61 @@ class Story extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        margin: EdgeInsets.only(
-          left: RepsonsiveSize.width(
+      body: Card(
+        shape: _cardShape(context),
+        margin: EdgeInsets.all(
+          RepsonsiveSize.width(
             context: context,
-            percentageWidth: 2.0,
-          ),
-          right: RepsonsiveSize.width(
-            context: context,
-            percentageWidth: 2.0,
+            percentageWidth: 4.0,
           ),
         ),
-        child: ListView(
-          children: [
-            _sizedBox(context),
-            MainTitle(title: "Story Title"),
-            _sizedBox(context),
-            SubTitle(subTitle: "By: Author name", fontSize: 4.5,),
-            _sizedBox(context),
-            Text(_placeholderText),
-          ],
+        child: Container(
+          margin: EdgeInsets.only(
+            left: RepsonsiveSize.width(
+              context: context,
+              percentageWidth: 4.0,
+            ),
+            right: RepsonsiveSize.width(
+              context: context,
+              percentageWidth: 4.0,
+            ),
+          ),
+          child: ListView(
+            children: [
+              _sizedBox(context),
+              MainTitle(title: "Story Title"),
+              _sizedBox(context),
+              SubTitle(
+                subTitle: "By: Author name",
+                fontSize: 4.5,
+              ),
+              _sizedBox(context),
+              Text(_placeholderText),
+              _sizedBox(context),
+              Divider(
+                thickness: 0.5,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Published: 10/21/2021"),
+                  StoryRating(),
+                ],
+              ),
+              _sizedBox(context),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  RoundedRectangleBorder _cardShape(BuildContext context) {
+    return RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(
+        RepsonsiveSize.width(
+          context: context,
+          percentageWidth: 5.0,
         ),
       ),
     );
