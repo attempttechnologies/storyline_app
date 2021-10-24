@@ -8,7 +8,7 @@ class SignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthForm(
-      title: MainTitle(title: "Sign In"),
+      title: MainTitle(title: "Sign Up"),
       emailTextFormField: CustomTextFormField(
         labelText: "Email",
         hintText: "example@email.com",

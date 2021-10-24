@@ -64,6 +64,10 @@ class StoryCard extends StatelessWidget {
         context: context,
         percentageWidth: 5.0,
       ),
+      bottom: RepsonsiveSize.height(
+        context: context,
+        percentageHeight: 3.5,
+      ),
     );
   }
 
