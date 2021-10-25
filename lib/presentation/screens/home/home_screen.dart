@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:storyline_app/presentation/configs/responsive_size.dart';
+import 'package:storyline_app/presentation/screens/reviews/review_screen.dart';
 import 'package:storyline_app/presentation/screens/story/story.dart';
 import 'package:storyline_app/presentation/screens/home/widgets/story_card.dart';
 import 'package:storyline_app/presentation/widgets/text/main_title.dart';
@@ -17,7 +18,8 @@ class HomeScreen extends StatelessWidget {
           StoryCard(
             onTap: () => _navTo(context),
           ),
-          StoryCard(),
+          StoryCard(
+          ),
           StoryCard(),
           StoryCard(),
           StoryCard(),
