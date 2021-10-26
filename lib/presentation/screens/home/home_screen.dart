@@ -12,17 +12,51 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(),
+      drawer: _drawer(context),
       body: ListView(
         children: [
           _topMargin(context),
           StoryCard(
             onTap: () => _navTo(context),
           ),
-          StoryCard(
+          StoryCard(),
+          StoryCard(),
+          StoryCard(),
+          StoryCard(),
+        ],
+      ),
+    );
+  }
+
+  Drawer _drawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          ListTile(
+            title: Text("Item One"),
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
-          StoryCard(),
-          StoryCard(),
-          StoryCard(),
+          ListTile(
+            title: Text("Item One"),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text("Item One"),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text("Item One"),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
         ],
       ),
     );
@@ -41,7 +75,6 @@ class HomeScreen extends StatelessWidget {
 
   AppBar _appBar() {
     return AppBar(
-      leading: SizedBox(),
       centerTitle: true,
       title: MainTitle(title: "Storyline"),
       backgroundColor: Colors.greenAccent,

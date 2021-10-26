@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:storyline_app/presentation/configs/responsive_size.dart';
+import 'package:storyline_app/presentation/screens/reviews/review_screen.dart';
 import 'package:storyline_app/presentation/widgets/text/main_title.dart';
 import 'package:storyline_app/presentation/widgets/text/story_rating.dart';
 import 'package:storyline_app/presentation/widgets/text/sub_title.dart';
@@ -34,7 +35,18 @@ class Story extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Published: 10/21/2021"),
-                  StoryRating(),
+                  StoryRating(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return ReviewScreen();
+                          },
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
               _sizedBox(context),
